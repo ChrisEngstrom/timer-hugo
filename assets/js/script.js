@@ -77,10 +77,10 @@
         submitHandler: function (form) {
             $(form).ajaxSubmit({
                 type: "POST",
-                data: $(form).serialize(),
-                url: "sendmail.php",
+                url: $(form).prop('action'),
                 success: function () {
                     $('#contact-form #success').fadeIn();
+                    e.preventDefault();
                 },
                 error: function () {
                     $('#contact-form #error').fadeIn();
